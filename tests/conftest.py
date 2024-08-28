@@ -2,7 +2,7 @@ import pytest
 from selene import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from demoqa_testppis.utils import attach
+from demoqa_tests.utils import attach
 import os
 from dotenv import load_dotenv
 
