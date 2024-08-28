@@ -1,5 +1,7 @@
 import allure
+import os
 from allure_commons.types import AttachmentType
+
 
 
 def add_screenshot(browser):
@@ -19,6 +21,7 @@ def add_html(browser):
     allure.attach(html, 'page_source', AttachmentType.HTML, '.html')
 
 def add_video(browser):
+    selenoid_url = os.gotenv('SELENOID_URL')
     video_url = f"{selenoid_url}/video/" + browser.driver.session_id + ".mp4"
     html = "<html><body><video width='100%' height='100%' controls autoplay><source src='" \
            + video_url \
